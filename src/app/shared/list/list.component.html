@@ -1,0 +1,18 @@
+<table *ngIf="!!items && items.length; else noDataTemplate">
+    <tr>
+        <th>КОД</th>
+        <th>НАЗВАНИЕ</th>
+        <th>Владелец</th>
+        <th>Создатель</th>
+    </tr>
+    <tr *ngFor="let item of items">
+        <td>{{item.code}}</td>
+        <td>{{item.name}}</td>
+        <td>{{item.currentOwner || 'Свободно'}}</td>
+        <td>{{item.creator}}</td>
+    </tr>
+</table>
+<ng-template #noDataTemplate>
+    <span class="capitalize">Нет данных</span>
+</ng-template>
+
