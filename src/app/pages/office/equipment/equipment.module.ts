@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { EquipmentComponent } from './equipment.component';
+import { EquipmentRoutingModule } from './equipment-routing.module';
 
 
 
@@ -9,7 +10,8 @@ import { EquipmentComponent } from './equipment.component';
     EquipmentComponent
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    EquipmentRoutingModule
   ]
 })
 export class EquipmentModule { }

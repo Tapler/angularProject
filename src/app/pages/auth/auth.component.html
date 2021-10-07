@@ -1,1 +1,15 @@
-<p>auth works!</p>
+<ng-container *ngIf="!!loginForm">
+    <form class="d-flex w-100 h-100 col-12 align-items-center justify-content-center" [formGroup]="loginFormGroup" (ngSubmit)="identify()">
+        <div class="form-row">
+            <div class="col-8">
+                <label for="login">Логин</label>
+                <input formControlName="login" type="text" />
+            </div>
+            <div class="col-8">
+                <label for="login">Пароль</label>
+                <input formControlName="password" type="text" />
+            </div>
+        </div>
+        <button type="submit">Войти</button>
+    </form>
+</ng-container>

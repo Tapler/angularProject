@@ -7,8 +7,9 @@ import { AuthLoadGuard } from './auth-load.guard';
 const routes: Routes = [
   { path: 'auth', component: AuthComponent },
   { path: 'home', component: HomeComponent, canActivate: [AuthLoadGuard] },
-  { path: 'office', loadChildren: './pages/office/office.module#OfficeModule', redirectTo: 'home', pathMatch: 'full', canLoad: [AuthLoadGuard] },
-  { path: '**', redirectTo: 'home' }
+  { path: 'office', loadChildren: () => import('./pages/office/office.module').then((m) => m.OfficeModule), canLoad: [AuthLoadGuard] },
+  { path: '', redirectTo: 'home', pathMatch: 'full' },
+  { path: '**', redirectTo: 'home' },
 ];
 
 @NgModule({
