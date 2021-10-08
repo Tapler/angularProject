@@ -1,6 +1,6 @@
-export interface Equipment{
+export interface Equipment {
     id: number;
-    name:string;
+    name: string;
     code: string;
     creator: string;
     currentOwner?: string;

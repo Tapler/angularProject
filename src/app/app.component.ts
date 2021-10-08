@@ -9,7 +9,7 @@ import { Equipment } from './models/interfaces/equipment';
 export class AppComponent {
   title = 'oec-client';
 
-
+  
 
   equipments: Equipment[] = [
     {

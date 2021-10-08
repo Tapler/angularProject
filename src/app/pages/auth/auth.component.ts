@@ -36,8 +36,8 @@ export class AuthComponent implements OnInit {
   }
 
   constructor(
-      private fb: FormBuilder,
-      private router: Router
+    private fb: FormBuilder,
+    private router: Router
   ) {
     this.initControls();
   }

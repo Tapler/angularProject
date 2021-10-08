@@ -1,18 +1,17 @@
 <table *ngIf="!!items && items.length; else noDataTemplate">
     <tr>
         <th>КОД</th>
-        <th>НАЗВАНИЕ</th>
+        <th>Название</th>
+        <th>Издатель</th>
         <th>Владелец</th>
-        <th>Создатель</th>
     </tr>
-    <tr *ngFor="let item of items">
+    <tr *ngFor="let item of items" (click)="rowClick(item.id)">
         <td>{{item.code}}</td>
         <td>{{item.name}}</td>
-        <td>{{item.currentOwner || 'Свободно'}}</td>
         <td>{{item.creator}}</td>
+        <td>{{item.currentOwner || 'Свободно'}}</td>
     </tr>
 </table>
 <ng-template #noDataTemplate>
     <span class="capitalize">Нет данных</span>
 </ng-template>
-

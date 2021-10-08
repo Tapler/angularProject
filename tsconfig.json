@@ -15,11 +15,17 @@
     "moduleResolution": "node",
     "importHelpers": true,
     "target": "es2017",
-    "module": "es2020",
+    "module": "esNext",
     "lib": [
       "es2018",
       "dom"
-    ]
+    ],
+    "paths": {
+      "ui": [
+        "dist/ui/ui",
+        "dist/ui"
+      ]
+    }
   },
   "angularCompilerOptions": {
     "enableI18nLegacyMessageIdFormat": false,

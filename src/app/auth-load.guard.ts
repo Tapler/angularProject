@@ -8,21 +8,21 @@ import { IUser } from './models/interfaces/user';
 })
 export class AuthLoadGuard implements CanActivate, CanLoad {
   canActivate(
-      route: ActivatedRouteSnapshot,
-      state: RouterStateSnapshot): Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree {
-
+    route: ActivatedRouteSnapshot,
+    state: RouterStateSnapshot): Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree {
+      
     return this.checkUser();
   }
   canLoad(
-      route: Route,
-      segments: UrlSegment[]): Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree {
+    route: Route,
+    segments: UrlSegment[]): Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree {
     return this.checkUser();
   }
 
   checkUser(): boolean {
     const user: IUser | null = !!localStorage.getItem('user')
-        ? JSON.parse(`${localStorage.getItem('user')}`) as IUser
-        : null;
+      ? JSON.parse(`${localStorage.getItem('user')}`) as IUser
+      : null;
     return !!user;
   }
 }
